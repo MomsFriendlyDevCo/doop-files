@@ -1,0 +1,20 @@
+{
+  "name": "@doop/service-{{FIXME}}",
+  "version": "1.0.0",
+  "description": "A {{FIXME}} service for the Doop framework",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MomsFriendlyDevCo/doop-service-{{FIXME}}.git"
+  },
+  "keywords": [
+    "doop"
+  ],
+  "author": "Matt Carter <m@ttcarter.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MomsFriendlyDevCo/doop-service-{{FIXME}}/issues"
+  },
+  "homepage": "https://github.com/MomsFriendlyDevCo/doop-service-{{FIXME}}#readme",
+  "dependencies": {
+  }
+}
