@@ -1,4 +1,4 @@
-@doop/service-{{FIXME}}
+@doop/service-files
 ==================
 
-A {{FIXME}} service for the [Doop framework](https://github.com/MomsFriendlyDevCo/Doop).
+A file upload service for the [Doop framework](https://github.com/MomsFriendlyDevCo/Doop).
