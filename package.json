@@ -1,5 +1,5 @@
 {
-  "name": "@doop/service-files",
+  "name": "@doop/files",
   "version": "1.0.1",
   "description": "A file upload service for the Doop framework",
   "repository": {
