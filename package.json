@@ -2,6 +2,7 @@
   "name": "@doop/files",
   "version": "1.0.1",
   "description": "A file upload service for the Doop framework",
+  "main": "libs/file-factory.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MomsFriendlyDevCo/doop-service-files.git"

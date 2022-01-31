@@ -1,5 +1,6 @@
 <script lang="js" frontend>
 // TODO: Should we `import Debug from @doop/debug` rather than depending on service existing?
+// TODO: Could the underlying logic be provided as a package for import and then exposed here as a service?
 app.service('$files', function() {
 	var $files = {};
 
