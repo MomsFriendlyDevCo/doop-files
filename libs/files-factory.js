@@ -3,6 +3,7 @@ import Debug from '@doop/debug';
 var FilesFactory = function FilesFactory() {
 	var $files = {};
 
+	// TODO: Expose a property to enable/disable debugging from project level
 	this.$debug = Debug('$files').enable(false);
 
 	/**
