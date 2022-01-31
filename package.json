@@ -1,6 +1,6 @@
 {
   "name": "@doop/files",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A file upload service for the Doop framework",
   "main": "libs/files-factory.js",
   "repository": {
