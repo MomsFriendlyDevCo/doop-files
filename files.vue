@@ -1,4 +1,5 @@
 <script lang="js" frontend>
+// TODO: Should we `import Debug from @doop/debug` rather than depending on service existing?
 app.service('$files', function() {
 	var $files = {};
 
