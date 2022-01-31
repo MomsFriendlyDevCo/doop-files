@@ -2,10 +2,10 @@
   "name": "@doop/files",
   "version": "1.0.1",
   "description": "A file upload service for the Doop framework",
-  "main": "libs/file-factory.js",
+  "main": "libs/files-factory.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MomsFriendlyDevCo/doop-service-files.git"
+    "url": "git+https://github.com/MomsFriendlyDevCo/doop-files.git"
   },
   "keywords": [
     "doop"
@@ -13,10 +13,11 @@
   "author": "Matt Carter <m@ttcarter.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MomsFriendlyDevCo/doop-service-files/issues"
+    "url": "https://github.com/MomsFriendlyDevCo/doop-files/issues"
   },
-  "homepage": "https://github.com/MomsFriendlyDevCo/doop-service-files#readme",
+  "homepage": "https://github.com/MomsFriendlyDevCo/doop-files#readme",
   "dependencies": {
+    "@doop/debug": "^1.0.4",
     "lodash": "^4.17.21",
     "multer": "^1.4.4",
     "os": "^0.1.2"
