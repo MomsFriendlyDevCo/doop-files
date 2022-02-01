@@ -1,7 +1,7 @@
 import Debug from '@doop/debug';
 
 var FilesFactory = function FilesFactory() {
-	var $files = {};
+	var $files = this;
 
 	$files.$debug = Debug('$files').enable(false);
 
@@ -64,7 +64,7 @@ var FilesFactory = function FilesFactory() {
 					status: 'uploading',
 					error: undefined,
 				};
-				this.$debug('Upload', fileObj);
+				$files.$debug('Upload', fileObj);
 
 				$files.uploading[fileObj._id] = fileObj;
 				
@@ -101,7 +101,7 @@ var FilesFactory = function FilesFactory() {
 		// }}}
 
 		if (!settings.files) { // User wants this function to prompt the user
-			this.$debug('Prompt for upload file', settings);
+			$files.$debug('Prompt for upload file', settings);
 			return new Promise((resolve, reject) => {
 				var wrapper = $('<div style="display: none"/>').appendTo('body');
 				var fileControl = $(
