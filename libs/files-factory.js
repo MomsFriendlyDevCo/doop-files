@@ -1,7 +1,7 @@
 import Debug from '@doop/debug';
 
 var FilesFactory = function FilesFactory() {
-	var $files = this;
+	var $files = {};
 
 	$files.$debug = Debug('$files').enable(false);
 
