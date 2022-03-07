@@ -1,7 +1,7 @@
 import Debug from '@doop/debug';
 
-var FilesFactory = function FilesFactory() {
-	var $files = {};
+let FilesFactory = function FilesFactory() {
+	let $files = {};
 
 	$files.$debug = Debug('$files').enable(false);
 
@@ -41,7 +41,7 @@ var FilesFactory = function FilesFactory() {
 	* @return {Promise} A promise which will resolve when all uploads complete
 	*/
 	$files.upload = (options) => {
-		var settings = {
+		let settings = {
 			url: undefined,
 			multiple: true,
 			files: undefined,
@@ -53,9 +53,9 @@ var FilesFactory = function FilesFactory() {
 		if (!settings.url) throw new Error('url omitted when calling $files.upload()');
 
 		// Closure for the actual uploader {{{
-		var upload = fileList => Promise.all(
+		let upload = fileList => Promise.all(
 			_.toArray(fileList).map(file => {
-				var fileObj = {
+				let fileObj = {
 					_id: `upload-${$files.nextId++}`,
 					promise: undefined,
 					name: file.name,
@@ -70,7 +70,7 @@ var FilesFactory = function FilesFactory() {
 
 				$files.uploading[fileObj._id] = fileObj;
 
-				var formData = new FormData();
+				let formData = new FormData();
 				formData.append('file', file);
 
 				// Append regular data
@@ -109,8 +109,8 @@ var FilesFactory = function FilesFactory() {
 		if (!settings.files) { // User wants this function to prompt the user
 			$files.$debug('Prompt for upload file', settings);
 			return new Promise((resolve, reject) => {
-				var wrapper = $('<div style="display: none"/>').appendTo('body');
-				var fileControl = $(
+				let wrapper = $('<div style="display: none"/>').appendTo('body');
+				let fileControl = $(
 					'<input type="file" '
 						+ (settings.multiple ? 'multiple="multiple" ' : ' ')
 						+ (settings.accept ? 'accept="' + settings.accept + '" ' : ' ')
