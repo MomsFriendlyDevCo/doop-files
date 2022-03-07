@@ -34,6 +34,7 @@ var FilesFactory = function FilesFactory() {
 	* @param {Object} options The options to use during upload, inherits $files.defaults
 	* @param {string} options.url URL endpoint to upload to
 	* @param {Object} [options.body] Additional AxiosRequest parameters to pass, overrides auto-generated properties
+	* @param {Object} [options.data] Additional data fields to provide as multipart values, these will appear as seperate "file" entiries
 	* @param {boolean} [options.multiple=true] If prompting for files, allow multiple
 	* @param {string} [options.accept] The file types to accept, can be a mime list or extension list. e.g. 'image/*,.pdf,.zip'
 	* @param {FormData|FileList|File} [options.files] The file(s) to upload in FormData, File or FileList format, specifying this does not prompt the user
@@ -45,6 +46,7 @@ var FilesFactory = function FilesFactory() {
 			multiple: true,
 			files: undefined,
 			body: {},
+			data: {},
 			...$files.defaults,
 			...options,
 		};
@@ -67,9 +69,13 @@ var FilesFactory = function FilesFactory() {
 				$files.$debug('Upload', fileObj);
 
 				$files.uploading[fileObj._id] = fileObj;
-				
+
 				var formData = new FormData();
 				formData.append('file', file);
+
+				// Append regular data
+				Object.entries(settings.data)
+					.forEach(([key, val]) => formData.append(key, val));
 
 				return fileObj.promise = app.service.$http({
 					url: settings.url,
