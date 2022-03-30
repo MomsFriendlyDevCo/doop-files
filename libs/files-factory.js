@@ -29,8 +29,8 @@ let FilesFactory = function FilesFactory() {
 
 
 	/**
-	* Upload a list of files (`files` must be a compatible FileList object provided by the browser)
-	* All uploading files are available in $files.uploading
+	* Optionally prompt for and upload a list of files OR supply a file to upload
+	* File uploads are tracked in `$files.uploading` as well as automatically displaying progress toassts
 	* @param {Object} options The options to use during upload, inherits $files.defaults
 	* @param {string} options.url URL endpoint to upload to
 	* @param {Object} [options.body] Additional AxiosRequest parameters to pass, overrides auto-generated properties
@@ -106,8 +106,11 @@ let FilesFactory = function FilesFactory() {
 		);
 		// }}}
 
-		if (!settings.files) { // User wants this function to prompt the user
+		if (!settings.files) { // User wants this function to prompt the user instead of being supplied a suitable file object
 			$files.$debug('Prompt for upload file', settings);
+			// Horrible kludge to ask the user for an upload file {{{
+			// Yes this is extremely stupid to create a hidden DOM element which then immediately gets destroyed
+			// but its the only way that works on most browsers - MC 2022-03-30
 			return new Promise((resolve, reject) => {
 				let wrapper = $('<div style="display: none"/>').appendTo('body');
 				let fileControl = $(
@@ -125,6 +128,7 @@ let FilesFactory = function FilesFactory() {
 					.appendTo(wrapper)
 					.click();
 			});
+			// }}}
 		} else if (settings.files instanceof FormData) {
 			return upload(settings.files.values());
 		} else if (settings.files instanceof File) {
