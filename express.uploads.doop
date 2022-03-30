@@ -16,9 +16,9 @@
 		.then(()=> res.sendStatus(200))
 * });
 */
-const _ = require('lodash');
-const multer = require('multer');
-const os = require('os');
+let _ = require('lodash');
+let multer = require('multer');
+let os = require('node:os');
 
 app.middleware.express.uploads = multer({
 	storage: multer.diskStorage({
