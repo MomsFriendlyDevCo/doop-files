@@ -30,7 +30,7 @@ let FilesFactory = function FilesFactory() {
 
 	/**
 	* Optionally prompt for and upload a list of files OR supply a file to upload
-	* File uploads are tracked in `$files.uploading` as well as automatically displaying progress toassts
+	* File uploads are tracked in `$files.uploading` as well as automatically displaying progress toasts
 	* @param {Object} options The options to use during upload, inherits $files.defaults
 	* @param {string} options.url URL endpoint to upload to
 	* @param {Object} [options.body] Additional AxiosRequest parameters to pass, overrides auto-generated properties
